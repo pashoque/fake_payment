@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  php:
+    container_name: php
+    build: ./php-fpm
+    ports:
+    - "9000:9001"
+    volumes:
+    - ./app:/var/www/app:cached
+    - ./logs/app:/var/www/symfony/var/log:cached
+    extra_hosts:
+    - "docker-host.localhost:127.0.0.1"
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    ports:
+    - "80:80"
+    volumes:
+    - ./logs/nginx:/var/log/nginx:cached
+    - ./app:/var/www/symfony:cached
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,13 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+cardSubmit:
+    path: /cardSubmit
+    requirements:
+        method: POST
+    controller: App\Controller\DefaultController::cardCredentials
+card:
+    path: /card
+    requirements:
+        method: GET
+    controller: App\Controller\DefaultController::cardCredentialsIndex
