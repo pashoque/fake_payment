@@ -39,9 +39,6 @@ ADD xdebug.ini  /etc/php7/conf.d/
 
 ADD symfony.pool.conf /etc/php7/php-fpm.d/
 
-COPY app /var/www/app
-RUN cd /var/www/app && composer install --ignore-platform-reqs --no-scripts
-
 CMD ["php-fpm7", "-F"]
 
 WORKDIR /var/www/app

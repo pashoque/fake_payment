@@ -6,8 +6,8 @@ services:
     ports:
     - "9000:9001"
     volumes:
-    - ./app:/var/www/app:cached
-    - ./logs/app:/var/www/symfony/var/log:cached
+    - ./app:/var/www/app
+    - ./logs/app:/var/www/app/var/log
     extra_hosts:
     - "docker-host.localhost:127.0.0.1"
   nginx:
@@ -16,8 +16,7 @@ services:
     ports:
     - "80:80"
     volumes:
-    - ./logs/nginx:/var/log/nginx:cached
-    - ./app:/var/www/symfony:cached
+    - ./logs/nginx:/var/log/nginx
 networks:
   default:
     driver: bridge
