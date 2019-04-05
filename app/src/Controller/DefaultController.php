@@ -46,7 +46,7 @@ class DefaultController extends AbstractController
             }
             $paymentService->sendPaymentStatus($request->query->get('callbackUrl'), $status);
 
-            return new Response($this->renderView('status.html.twig', ['status' => $status]));
+            return new Response($this->renderView('status.html.twig', ['status' => $status ? 'success' : 'fail']));
         }
 
         return new Response($this->renderView('form.html.twig', ['form' => $form->createView()]));

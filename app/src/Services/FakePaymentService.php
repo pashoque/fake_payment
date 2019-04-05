@@ -48,7 +48,7 @@ class FakePaymentService implements PaymentServiceInterface
         return true;
     }
 
-    public function validateCredentials(string $cardNumber, string $cvv, string $holder): bool
+    public function validateCredentials(int $cardNumber, string $cvv, string $holder): bool
     {
         return $cardNumber === self::FAKE_SUCCESS_CARD;
     }
