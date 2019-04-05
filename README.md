@@ -3,3 +3,4 @@
 3. Run docker exec -it php sh 
 4. Run composer install
 5. Open fakePay.localhost
+Valid card number: 1111111111111111
